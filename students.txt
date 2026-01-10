@@ -1,0 +1,3 @@
+BSCS-F25-2007,Umair Ijaz,BSCS,hasmim@gmai.com
+BSCS-F25-2008,Hashim Abbasi,BSCS,umair@gmai.com
+BSCS-F25-2009,Suffyan Abbasi,BSCS,Suffyan@gmai.com
