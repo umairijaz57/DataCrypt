@@ -33,7 +33,6 @@ string decryptData(string &text, string &key) {
             if (i > 0) temp ^= result[i - 1];
             temp ^= (round * 7 + i);
 
-            // Reverse S-box (simple brute-force reverse)
             for (int j = 0; j < 256; j++) {
                 if (sbox[j] == (unsigned char)temp) {
                     temp = j;

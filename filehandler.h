@@ -12,7 +12,6 @@ struct Student {
     string email;
 };
 
-// File functions
 bool createOutputDirectory(const string &dirName);
 vector<Student> readStudentsFile(const string &filename);
 bool saveEncryptedStudent(const Student &student,
