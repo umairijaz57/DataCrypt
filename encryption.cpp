@@ -8,7 +8,7 @@ void initSBox() {
     }
 }
 
-string encryptData(string &text, string &key) {
+string encryptData(const string &text, const string &key) {
     string result = text;
     int keySize = key.size();
 
@@ -18,30 +18,6 @@ string encryptData(string &text, string &key) {
             result[i] = sbox[(unsigned char)result[i]];
             result[i] ^= (round * 7 + i);
             if (i > 0) result[i] ^= result[i - 1];
-        }
-    }
-    return result;
-}
-
-string decryptData(string &text, string &key) {
-    string result = text;
-    int keySize = key.size();
-
-    for (int round = ROUNDS - 1; round >= 0; round--) {
-        for (size_t i = result.size(); i-- > 0;) {
-            char temp = result[i];
-            if (i > 0) temp ^= result[i - 1];
-            temp ^= (round * 7 + i);
-
-            for (int j = 0; j < 256; j++) {
-                if (sbox[j] == (unsigned char)temp) {
-                    temp = j;
-                    break;
-                }
-            }
-
-            temp ^= key[i % keySize];
-            result[i] = temp;
         }
     }
     return result;

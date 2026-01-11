@@ -9,6 +9,5 @@ extern unsigned char sbox[256];
 
 void initSBox();
 string encryptData(const string &text, const string &key);
-string decryptData(const string &text, const string &key);
 
 #endif

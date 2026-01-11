@@ -10,7 +10,7 @@ using namespace std;
 const int KEY_SIZE = 16;
 
 string generateRandomKey();
-string makeSaltedKey(string &key);
+string makeSaltedKey(const string &key);
 
 #endif
 

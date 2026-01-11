@@ -49,8 +49,5 @@ int main() {
     cout << "  Keys: keys.txt\n";
     cout << "========================================\n\n";
 
-    string rrr = decryptData("4617ae97fe6542b4e85a", "94a49095d50128c82091ff5e729002db");
-    cout << "Decrypted Sample Name: " << rrr << endl;
-
     return 0;
 }
