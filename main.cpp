@@ -10,7 +10,6 @@ int main() {
     cout << "========================================\n\n";
     
     srand(time(0));
-    initSBox();
 
     string outputDir = "student_data";
     if (!createOutputDirectory(outputDir)) {
@@ -27,15 +26,16 @@ int main() {
     int count = 0;
     for (const auto &student : students) {
         string key = generateRandomKey();
-        string finalKey = makeSaltedKey(key);
-
-        string encRoll = encryptData(student.roll, finalKey);
-        string encName = encryptData(student.name, finalKey);
-        string encProgram = encryptData(student.program, finalKey);
-        string encEmail = encryptData(student.email, finalKey);
-
+        
+        string encRoll = encryptData(student.roll, key);
+        string encName = encryptData(student.name, key);
+        string encProgram = encryptData(student.program, key);
+        string encEmail = encryptData(student.email, key);
+        
         if (saveEncryptedStudent(student, encRoll, encName, encProgram, encEmail, outputDir)) {
-            appendKeyToFile(student.roll, finalKey);
+            appendKeyToFile(student.roll, key);
+            string finalKey = makeSaltedKey(key);
+            appendKeyToFileSalted(student.roll, finalKey);
             cout << "[" << ++count << "] " << student.roll << " - " << student.name << endl;
         } else {
             cerr << "Error: " << student.roll << " save nahi hua!\n";

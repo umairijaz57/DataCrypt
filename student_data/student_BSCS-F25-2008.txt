@@ -1,4 +1,0 @@
-Roll: aa37765bcc973adc0fd2887db5
-Name: e84f5ed47583bc0117d7329303
-Program: aa37765b
-Email: 69d2a92eb1928cf8c7b592e2f5f1

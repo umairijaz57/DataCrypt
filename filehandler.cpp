@@ -60,4 +60,12 @@ bool appendKeyToFile(const string &roll, const string &key) {
     out.close();
     return true;
 }
+bool appendKeyToFileSalted(const string &roll, const string &key) {
+    ofstream out("keysSalted.txt", ios::app);
+    if (!out.is_open()) return false;
+    out << roll << " " << toHex(key) << "\n";
+    out.close();
+    return true;
+}
+
 

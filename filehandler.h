@@ -21,5 +21,6 @@ bool saveEncryptedStudent(const Student &student,
                           const string &encEmail,
                           const string &outputDir);
 bool appendKeyToFile(const string &roll, const string &key);
+bool appendKeyToFileSalted(const string &roll, const string &key);
 
 #endif
